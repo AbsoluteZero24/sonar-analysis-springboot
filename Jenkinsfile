@@ -29,6 +29,12 @@ pipeline {
             }
         }
         
+        stage('Build') {
+            steps {
+                sh "mvn clean install"
+            }
+        }
+
         stage('sonar analsys') {
             steps {
                 withSonarQubeEnv('sonar') {
